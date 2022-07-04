@@ -1,19 +1,16 @@
 # ModoQuiosque
 
-1. Instalar o RaspbianOs with desktop – sem programas adicionais.
+1. Instalando o Raspberry Pi OS Lite (32-bit) sem interface gráfica e sem programas adicionais:
+
+    1.1. Baixe o software Raspberry Pi Manager para instalação do SO no raspberry. [Link para download](https://www.raspberrypi.com/software/).
+
+    1.2. Instale o **Raspberry Pi OS Lite (32-bit)** (sem GUI) no cartão de memória do raspberry.
 
 2. Após instalado, atualize os pacotes e aplique as novidadas:
 
 ```
 # apt update
 # apt upgrade -y
-```
-
-
-3. Desabilite a interface gráfica
-
-```
-# systemctl set-default multi-user.target
 ```
 
 4. Instale os pacotes necessários:
@@ -35,7 +32,7 @@ fi
 
 6. Configure o login automático:
 
-  6.1 Digite ```sudo raspi-config```, selecione **System Options**, selecione **Boot / Auto Login** e depois **Console Autologin**
+    6.1. Digite ```sudo raspi-config```, selecione **"System Options"**, selecione **"Boot / Auto Login"** e depois **"Console Autologin"**
 
 7. Crie o arquivo **/home/pi/.xinitrc** e insira:
 
@@ -65,11 +62,19 @@ chromium-browser http://192.168.2.69:8080/guacamole \
  
  ```
 
-Caso a tela se apresente de forma estranha (cortada, distorcida ou pequena), ajuste os parâmetros abaixo:
+- Caso a tela se apresente de forma estranha (cortada, distorcida ou pequena), ajuste os parâmetros abaixo:
 
 1. Acesse o menu do raspberry pelo comando raspi-config,
 2. Selecione "Display Options", "D1 Resolution"
 3. Escolha a opção "CEA Mode 16 1920x1080 60Hz 16:9"
+
+
+- Caso tenha um so e queira desabilitar a interface gráfica, execute:
+
+```
+# systemctl set-default multi-user.target
+```
+
 
 Referência: 
 [blog R0b](https://blog.r0b.io/post/minimal-rpi-kiosk/)
