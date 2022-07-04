@@ -24,4 +24,4 @@
 
 ## Procedimento:
 
-- Clique [AQUI](Procedimeto.md) para executar os passos de instalação.
+- Clique [AQUI](Procedimento.md) para executar os passos de instalação.
